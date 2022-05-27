@@ -1,0 +1,74 @@
+<mat-card>
+  <mat-card-title>{{key.name}}</mat-card-title>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-title>{{scale.name}}</mat-card-title>
+</mat-card>
+<mat-form-field appearance="fill">
+  <mat-label>Practice interval</mat-label>
+  <input matInput type="text" [(ngModel)]="interval" (change)="restartInterval()">
+</mat-form-field>
+
+<mat-accordion>
+  <mat-expansion-panel (opened)="keysPanelOpenState = true"
+                        (closed)="keysPanelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span class="example-list-section">
+          Select keys
+          
+        </span>
+      </mat-panel-title>
+    
+    </mat-expansion-panel-header>
+      <mat-checkbox 
+          class="example-margin"
+          [checked]="allComplete(allKeys)"
+          color="primary"
+          [indeterminate]="someComplete(allKeys)"
+          (change)="setAll($event.checked, allKeys)">
+          All Keys
+      </mat-checkbox>
+      <span class="example-list-section">
+        <ul>
+          <div *ngFor="let key of allKeys">
+            <mat-checkbox [(ngModel)]="key.include"
+            color = "primary">
+              {{key.name}}
+            </mat-checkbox>
+          </div>
+        </ul>
+      </span>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Select Scales
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+
+    <span class="example-list-section">
+      <mat-checkbox class="example-margin"
+                    [checked]="allComplete(allScales)"
+                    color="primary"
+                    [indeterminate]="someComplete(allScales)"
+                    (change)="setAll($event.checked, allScales)">
+        Scales
+      </mat-checkbox>
+    </span>
+    <span class="example-list-section">
+      <ul>
+        <div *ngFor="let scale of allScales">
+          <mat-checkbox [(ngModel)]="scale.include"
+                        color = "primary">
+            {{scale.name}}
+          </mat-checkbox>
+        </div>
+  </ul>
+  </span>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
