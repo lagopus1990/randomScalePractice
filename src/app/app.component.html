@@ -1,12 +1,12 @@
-<mat-card>
+<mat-card class="scale">
   <mat-card-title>{{key.name}}</mat-card-title>
 </mat-card>
 <br>
-<mat-card>
+<mat-card class="scale">
   <mat-card-title>{{scale.name}}</mat-card-title>
 </mat-card>
-<mat-form-field appearance="fill">
-  <mat-label>Practice interval</mat-label>
+<mat-form-field color="accent" [floatLabel]="'always'"  appearance="standard">
+  <mat-label>Practice interval (in seconds)</mat-label>
   <input matInput type="text" [(ngModel)]="interval" (change)="restartInterval()">
 </mat-form-field>
 

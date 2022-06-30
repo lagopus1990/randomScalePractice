@@ -14,7 +14,7 @@ export interface Pair {
 
 export class AppComponent implements OnInit{
   title = 'Random Scale App';
-  interval = 5;
+  interval = 60;
   allKeys: Pair[] = [
     {name: 'A', include: true},
     {name: 'B flat', include: true},
