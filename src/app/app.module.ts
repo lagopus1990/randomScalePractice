@@ -14,6 +14,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { ScalesService } from './scales.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     CdkAccordionModule
     ],
-  providers: [],
+  providers: [ScalesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

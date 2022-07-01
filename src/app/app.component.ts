@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import vexflow from 'vexflow';
+import Vex from "vexflow";
+import { ScalesService } from './scales.service';
 
 export interface Pair {
   name: string;
@@ -14,11 +17,8 @@ export interface Pair {
 
 export class AppComponent implements OnInit{
   title = 'Random Scale App';
-  interval = 60;
+  interval = 5;
   allKeys: Pair[] = [
-    {name: 'A', include: true},
-    {name: 'B flat', include: true},
-    {name: 'B', include: true},
     {name: 'C', include: true},
     {name: 'C sharp', include: true},
     {name: 'D', include: true},
@@ -27,9 +27,12 @@ export class AppComponent implements OnInit{
     {name: 'F', include: true},
     {name: 'G flat', include: true},
     {name: 'G', include: true},
-    {name: 'A flat', include: true},];
+    {name: 'A flat', include: true},
+    {name: 'A', include: true},
+    {name: 'B flat', include: true},
+    {name: 'B', include: true},];
 
-  allScales: Pair[] = [
+  allScaleTypes: Pair[] = [
     {name:'Ionian / Major', include: true},
     {name:'Dorian', include: true},
     {name:'Phrygian', include: true},
@@ -45,28 +48,55 @@ export class AppComponent implements OnInit{
     {name:'Minor Blues', include: true},  
   ];
 
-  key: Pair = {name:'Minor', include: true};
-  scale: Pair = {name:'Spanish', include: true};
+  allNotes: any;
 
-  selectedScales: Pair[];
+  key: Pair = {name:'Minor', include: true};
+  scaleType: Pair = {name:'Spanish', include: true};
+
+  selectedScaleTypes: Pair[];
   selectedKeys: Pair[];
   intervalId: number = 0;
   panelOpenState = false;
   keysPanelOpenState = false;
+  VF = Vex.Flow;
+  staff: any;
+  renderer: any;
+  stave: any;
+  context: any;
+  voice: any;
 
-  constructor(){
-    this.selectedScales = this.allScales;
+  constructor(private scalesService: ScalesService){
+    this.selectedScaleTypes = this.allScaleTypes;
     this.selectedKeys = this.allKeys;
   }
 
   ngOnInit(){
     this.key = this.generateRandomItem(this.allKeys, this.key);
-    this.scale = this.generateRandomItem(this.allScales, this.scale);
+    this.scaleType = this.generateRandomItem(this.allScaleTypes, this.scaleType);
     this.intervalId  = window.setInterval(() => {
           this.key = this.generateRandomItem(this.allKeys, this.key);
-          this.scale = this.generateRandomItem(this.allScales, this.scale);
+          this.scaleType = this.generateRandomItem(this.allScaleTypes, this.scaleType);
+          this.redrawStaff();
       }, this.interval*1000);
-    
+
+        this.staff  = document.getElementById("vexflow-player");
+        this.renderer = new this.VF.Renderer(this.staff, this.VF.Renderer.Backends.SVG);
+        this.renderer.resize(500, 500);
+        this.context = this.renderer.getContext();
+        this.context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+        this.stave = new this.VF.Stave(10, 40, 400);
+        this.stave.addClef("treble");
+        this.stave.setContext(this.context).draw(); 
+        let keyIndex = this.allKeys.findIndex(item => item == this.key);  
+        let scaleTypeIndex = this.allScaleTypes.findIndex(item => item == this.scaleType); 
+        const notes = this.scalesService.getScale(keyIndex, scaleTypeIndex);
+
+      
+      this.voice = new this.VF.Voice({ num_beats: notes.length, beat_value: 4 });
+      this.voice.addTickables(notes);
+
+      new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], 320);
+      this.voice.draw(this.context, this.stave);
   }
 
   generateRandomItem(allItems: Pair[], currentItem: Pair){
@@ -80,9 +110,25 @@ export class AppComponent implements OnInit{
     clearInterval(this.intervalId);
     this.intervalId  = window.setInterval(() => {
       this.key = this.generateRandomItem(this.selectedKeys, this.key);
-      this.scale = this.generateRandomItem(this.selectedScales, this.scale);
+      this.scaleType = this.generateRandomItem(this.selectedScaleTypes, this.scaleType);
     
       }, this.interval*1000);
+  }
+
+  redrawStaff(){
+    console.log(this.voice.tickables);
+    this.voice.tickables.forEach((item: any) => {item.attrs.el.remove()});
+    this.voice.tickables = [];
+    console.log(this.voice.tickables);
+    
+    let keyIndex = this.allKeys.findIndex(item => item == this.key);  
+    let scaleTypeIndex = this.allScaleTypes.findIndex(item => item == this.scaleType);  
+    const notes = this.scalesService.getScale(keyIndex, scaleTypeIndex);
+    const voice = new this.VF.Voice({ num_beats: notes.length, beat_value: 4 });
+    voice.addTickables(notes);
+
+    new this.VF.Formatter().joinVoices([voice]).format([voice], 320);
+    voice.draw(this.context, this.stave);
   }
 
   allComplete(allItems: Pair[]): boolean {
@@ -102,7 +148,7 @@ export class AppComponent implements OnInit{
       return;
     }
     allItems.forEach(t => (t.include = include));
-  }
-
-  
+  }  
 }
+
+
