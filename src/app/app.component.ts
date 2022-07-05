@@ -19,33 +19,40 @@ export class AppComponent implements OnInit{
   title = 'Random Scale App';
   interval = 5;
   allKeys: Pair[] = [
-    {name: 'C', include: true},
-    {name: 'C sharp', include: true},
-    {name: 'D', include: true},
-    {name: 'E flat', include: true},
-    {name: 'E', include: true},
-    {name: 'F', include: true},
-    {name: 'G flat', include: true},
-    {name: 'G', include: true},
-    {name: 'A flat', include: true},
-    {name: 'A', include: true},
-    {name: 'B flat', include: true},
-    {name: 'B', include: true},];
+    {name: 'C', include: false},
+    {name: 'C sharp / C#', include: false},
+    {name: 'D Flat / Db', include: true},
+    {name: 'D', include: false},
+    {name: 'D sharp / D#', include: false},
+    {name: 'E flat / Eb', include: false},
+    {name: 'E', include: false},
+    {name: 'F', include: false},
+    {name: 'F sharp / F#', include: false},
+    {name: 'G flat / Gb', include: false},
+    {name: 'G', include: false},
+    {name: 'G sharp / G#', include: false},
+    {name: 'A flat / Ab', include: false},
+    {name: 'A', include: false},
+    {name: 'A sharp / A#', include: false},
+    {name: 'B flat / Bb', include: false},
+    {name: 'B', include: false},];
 
   allScaleTypes: Pair[] = [
     {name:'Ionian / Major', include: true},
-    {name:'Dorian', include: true},
-    {name:'Phrygian', include: true},
-    {name:'Lydian', include: true},
-    {name:'Myxolydian', include: true},
-    {name:'Aeolean / natural minor', include: true},
-    {name:'Locrian', include: true},
-    {name:'Lydian flat7', include: true},
-    {name:'Half tone whole tone', include: true},
-    {name:'Lydian flat7', include: true},  
-    {name:'Spanish / Phrygian Dominant', include: true},
-    {name:'Pentatonic Minor', include: true},  
-    {name:'Minor Blues', include: true},  
+    {name:'Dorian', include: false},
+    {name:'Phrygian', include: false},
+    {name:'Lydian', include: false},
+    {name:'Myxolydian', include: false},
+    {name:'Aeolean / natural minor', include: false},
+    {name:'Locrian', include: false},
+    {name:'Harmonic minor', include: false},
+    {name:'Lydian flat7', include: false},
+    {name:'Half tone whole tone', include: false}, 
+    {name:'Spanish / Phrygian Dominant', include: false},
+    {name:'Pentatonic Major', include: false},  
+    {name:'Major Blues', include: false},  
+    {name:'Pentatonic Minor', include: false},  
+    {name:'Minor Blues', include: false},  
   ];
 
   allNotes: any;
@@ -64,6 +71,7 @@ export class AppComponent implements OnInit{
   stave: any;
   context: any;
   voice: any;
+  index = 0;
 
   constructor(private scalesService: ScalesService){
     this.selectedScaleTypes = this.allScaleTypes;
@@ -116,19 +124,17 @@ export class AppComponent implements OnInit{
   }
 
   redrawStaff(){
-    console.log(this.voice.tickables);
     this.voice.tickables.forEach((item: any) => {item.attrs.el.remove()});
     this.voice.tickables = [];
-    console.log(this.voice.tickables);
     
     let keyIndex = this.allKeys.findIndex(item => item == this.key);  
     let scaleTypeIndex = this.allScaleTypes.findIndex(item => item == this.scaleType);  
     const notes = this.scalesService.getScale(keyIndex, scaleTypeIndex);
-    const voice = new this.VF.Voice({ num_beats: notes.length, beat_value: 4 });
-    voice.addTickables(notes);
+    this.voice = new this.VF.Voice({ num_beats: notes.length, beat_value: 4 });
+    this.voice.addTickables(notes);
 
-    new this.VF.Formatter().joinVoices([voice]).format([voice], 320);
-    voice.draw(this.context, this.stave);
+    new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], 320);
+    this.voice.draw(this.context, this.stave);
   }
 
   allComplete(allItems: Pair[]): boolean {
