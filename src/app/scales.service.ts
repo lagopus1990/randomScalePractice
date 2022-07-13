@@ -383,10 +383,30 @@ export class ScalesService {
                new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }),
                new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
                new this.VF.StaveNote({ keys: ["b/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
-               new this.VF.StaveNote({ keys: ["d/5"], duration: "q" }).addModifier(new this.VF.Accidental("b"))]
+               new this.VF.StaveNote({ keys: ["d/5"], duration: "q" }).addModifier(new this.VF.Accidental("b"))],
                // Db Blues Major
+               [new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["b/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["d/5"], duration: "q" }).addModifier(new this.VF.Accidental("b"))],
                // Db Pentatonic Minor
+               [new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["c/5"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["d/5"], duration: "q" }).addModifier(new this.VF.Accidental("b"))],
                // Db Blues Minor
+               [new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["c/5"], duration: "q" }).addModifier(new this.VF.Accidental("b")),
+               new this.VF.StaveNote({ keys: ["d/5"], duration: "q" }).addModifier(new this.VF.Accidental("b"))],
                ]
             ]}
 

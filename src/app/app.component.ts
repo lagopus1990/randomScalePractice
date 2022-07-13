@@ -40,7 +40,7 @@ export class AppComponent implements OnInit{
 
   allScaleTypes: Pair[] = [
     {name:'Ionian / Major', include: true},
-    {name:'Dorian', include: false},
+    {name:'Dorian', include: true},
     {name:'Phrygian', include: false},
     {name:'Lydian', include: false},
     {name:'Myxolydian', include: false},
@@ -74,6 +74,8 @@ export class AppComponent implements OnInit{
   voice: any;
   index = 0;
   paused = false;
+  staveSize = 520;
+  showStaff = true;
 
   constructor(private scalesService: ScalesService){
     this.selectedScaleTypes = this.allScaleTypes;
@@ -89,12 +91,14 @@ export class AppComponent implements OnInit{
           this.redrawStaff();
       }, this.interval*1000);
 
+        if(window.innerWidth < 540) this.staveSize = 340; 
+        console.log(window.innerWidth);
         this.staff  = document.getElementById("vexflow-player");
         this.renderer = new this.VF.Renderer(this.staff, this.VF.Renderer.Backends.SVG);
-        this.renderer.resize(500, 500);
+        this.renderer.resize(540, 120);
         this.context = this.renderer.getContext();
-        this.context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
-        this.stave = new this.VF.Stave(10, 40, 400);
+        this.context.setFont("Arial", 9, "").setBackgroundFillStyle("#eed");
+        this.stave = new this.VF.Stave(0, 5, this.staveSize);
         this.stave.addClef("treble");
         this.stave.setContext(this.context).draw(); 
         let keyIndex = this.allKeys.findIndex(item => item == this.key);  
@@ -105,7 +109,7 @@ export class AppComponent implements OnInit{
       this.voice = new this.VF.Voice({ num_beats: notes.length, beat_value: 4 });
       this.voice.addTickables(notes);
 
-      new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], 320);
+      new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], this.staveSize - 50);
       this.voice.draw(this.context, this.stave);
   }
 
@@ -121,8 +125,12 @@ export class AppComponent implements OnInit{
     this.intervalId  = window.setInterval(() => {
       this.key = this.generateRandomItem(this.selectedKeys, this.key);
       this.scaleType = this.generateRandomItem(this.selectedScaleTypes, this.scaleType);
-    
+      this.redrawStaff();
       }, this.interval*1000);
+  }
+  
+  toggleStaff(){
+    this.showStaff = !this.showStaff;
   }
 
   redrawStaff(){
@@ -135,7 +143,7 @@ export class AppComponent implements OnInit{
     this.voice = new this.VF.Voice({ num_beats: notes.length, beat_value: 4 });
     this.voice.addTickables(notes);
 
-    new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], 320);
+    new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], this.staveSize - 50);
     this.voice.draw(this.context, this.stave);
   }
 

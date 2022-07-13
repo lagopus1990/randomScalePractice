@@ -5,16 +5,23 @@
 <mat-card class="scale">
   <mat-card-title>{{scaleType.name}}</mat-card-title>
 </mat-card>
+<br>
+<div class="example-button-row">
+  <button mat-raised-button (click)="next()">Next</button>
+  <button *ngIf="!paused" mat-raised-button (click)="pause()">Pause</button>
+  <button *ngIf="paused" mat-raised-button color="primary" (click)="pause()">Pause</button>
+  <button *ngIf="paused" mat-raised-button (click)="start()">Start</button>
+  <button *ngIf="!paused" mat-raised-button color="primary" (click)="start()">Start</button>
+  <!-- <button *ngIf="!showStaff" mat-raised-button color="warn" (click)="toggleStaff()">Show staff</button>
+  <button *ngIf="showStaff" mat-raised-button (click)="toggleStaff()">Hide staff</button> -->
+  </div>
+
 <div id="vexflow-player"></div>
 <mat-form-field color="accent" [floatLabel]="'always'"  appearance="standard">
   <mat-label>Practice interval (in seconds)</mat-label>
   <input matInput type="text" [(ngModel)]="interval" (change)="restartInterval()">
 </mat-form-field>
-<button mat-raised-button (click)="next()">Next</button>
-<button *ngIf="!paused" mat-raised-button (click)="pause()">Pause</button>
-<button *ngIf="paused" mat-raised-button color="primary" (click)="pause()">Pause</button>
-<button *ngIf="paused" mat-raised-button (click)="start()">Start</button>
-<button *ngIf="!paused" mat-raised-button color="primary" (click)="start()">Start</button>
+
 
 <mat-accordion>
   <mat-expansion-panel (opened)="keysPanelOpenState = true"
