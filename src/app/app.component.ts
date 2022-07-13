@@ -3,6 +3,7 @@ import vexflow from 'vexflow';
 import Vex from "vexflow";
 import { ScalesService } from './scales.service';
 
+
 export interface Pair {
   name: string;
   include: boolean;
@@ -72,6 +73,7 @@ export class AppComponent implements OnInit{
   context: any;
   voice: any;
   index = 0;
+  paused = false;
 
   constructor(private scalesService: ScalesService){
     this.selectedScaleTypes = this.allScaleTypes;
@@ -135,6 +137,23 @@ export class AppComponent implements OnInit{
 
     new this.VF.Formatter().joinVoices([this.voice]).format([this.voice], 320);
     this.voice.draw(this.context, this.stave);
+  }
+
+  next(){
+    this.key = this.generateRandomItem(this.allKeys, this.key);
+    this.scaleType = this.generateRandomItem(this.allScaleTypes, this.scaleType);
+    this.redrawStaff();
+    if(!this.paused) this.restartInterval();
+  }
+
+  pause(){
+    this.paused = true;
+    clearInterval(this.intervalId);
+  }
+
+  start(){
+    this.paused = false;
+    this.restartInterval()
   }
 
   allComplete(allItems: Pair[]): boolean {

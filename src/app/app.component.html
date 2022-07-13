@@ -10,8 +10,11 @@
   <mat-label>Practice interval (in seconds)</mat-label>
   <input matInput type="text" [(ngModel)]="interval" (change)="restartInterval()">
 </mat-form-field>
-
-
+<button mat-raised-button (click)="next()">Next</button>
+<button *ngIf="!paused" mat-raised-button (click)="pause()">Pause</button>
+<button *ngIf="paused" mat-raised-button color="primary" (click)="pause()">Pause</button>
+<button *ngIf="paused" mat-raised-button (click)="start()">Start</button>
+<button *ngIf="!paused" mat-raised-button color="primary" (click)="start()">Start</button>
 
 <mat-accordion>
   <mat-expansion-panel (opened)="keysPanelOpenState = true"

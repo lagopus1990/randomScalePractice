@@ -10,7 +10,7 @@ import {MatSelectModule} from '@angular/material/select'
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
-
+import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -29,6 +29,7 @@ import { ScalesService } from './scales.service';
     MatCardModule,
     MatOptionModule,
     MatSelectModule,
+    MatButtonModule,
     FormsModule,
     MatInputModule,
     MatExpansionModule,
