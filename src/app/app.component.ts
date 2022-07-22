@@ -22,9 +22,9 @@ export class AppComponent implements OnInit{
   allKeys: Pair[] = [
     {name: 'C', include: false},
     {name: 'C sharp / C#', include: false},
-    {name: 'D Flat / Db', include: true},
+    {name: 'D Flat / Db', include: false},
     {name: 'D', include: false},
-    {name: 'D sharp / D#', include: false},
+    {name: 'D sharp / D#', include: true},
     {name: 'E flat / Eb', include: false},
     {name: 'E', include: false},
     {name: 'F', include: false},
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
     {name: 'B', include: false},];
 
   allScaleTypes: Pair[] = [
-    {name:'Ionian / Major', include: true},
+    {name:'Ionian / Major', include: false},
     {name:'Dorian', include: true},
     {name:'Phrygian', include: false},
     {name:'Lydian', include: false},
