@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import vexflow from 'vexflow';
 import Vex from "vexflow";
 import { ScalesService } from './scales.service';
@@ -18,7 +18,7 @@ export interface Pair {
 
 export class AppComponent implements OnInit{
   title = 'Random Scale App';
-  interval = 5;
+  interval = 60;
   allKeys: Pair[] = [
     {name: 'C', include: false},
     {name: 'C sharp / C#', include: false},
@@ -27,10 +27,10 @@ export class AppComponent implements OnInit{
     {name: 'D sharp / D#', include: false},
     {name: 'E flat / Eb', include: false},
     {name: 'E', include: false},
-    {name: 'F', include: true},
+    {name: 'F', include: false},
     {name: 'F sharp / F#', include: false},
     {name: 'G flat / Gb', include: false},
-    {name: 'G', include: false},
+    {name: 'G', include: true},
     {name: 'G sharp / G#', include: false},
     {name: 'A flat / Ab', include: false},
     {name: 'A', include: false},
@@ -39,8 +39,8 @@ export class AppComponent implements OnInit{
     {name: 'B', include: false},];
 
   allScaleTypes: Pair[] = [
-    {name:'Ionian / Major', include: false},
-    {name:'Dorian', include: true},
+    {name:'Ionian / Major', include: true},
+    {name:'Dorian', include: false},
     {name:'Phrygian', include: false},
     {name:'Lydian', include: false},
     {name:'Myxolydian', include: false},
