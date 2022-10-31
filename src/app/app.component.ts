@@ -1,4 +1,5 @@
-  import { Component, OnInit } from '@angular/core';
+  import { _isTestEnvironment } from '@angular/cdk/platform';
+import { Component, OnInit } from '@angular/core';
 import vexflow from 'vexflow';
 import Vex from "vexflow";
 import { ScalesService } from './scales.service';
@@ -29,14 +30,14 @@ export class AppComponent implements OnInit{
     {name: 'E', include: false},
     {name: 'F', include: false},
     {name: 'F sharp / F#', include: false},
-    {name: 'G flat / Gb', include: false},
-    {name: 'G', include: true},
+    {name: 'G flat / Gb', include: true},
+    {name: 'G', include: false},
     {name: 'G sharp / G#', include: false},
     {name: 'A flat / Ab', include: false},
     {name: 'A', include: false},
     {name: 'A sharp / A#', include: false},
     {name: 'B flat / Bb', include: false},
-    {name: 'B', include: false},];
+    {name: 'B', include: false},]; // 17
 
   allScaleTypes: Pair[] = [
     {name:'Ionian / Major', include: true},
@@ -54,6 +55,7 @@ export class AppComponent implements OnInit{
     {name:'Major Blues', include: false},  
     {name:'Pentatonic Minor', include: false},  
     {name:'Minor Blues', include: false},  
+    {name: 'Altered (dominant) /  Super Locrian ', include: false}
   ];
 
   allNotes: any;
@@ -168,13 +170,23 @@ export class AppComponent implements OnInit{
     return allItems.filter(item => item.include == false).length == 0;
   }
 
+  naturalComplete(allItems: Pair[]): boolean{
+    return allItems.filter(item => (item.include == false) && item.name.length == 1 ).length == 0;
+  }
+
+  someNaturalComplete(allItems: Pair[]): boolean {
+    if (allItems == null) {
+      return false;
+    }
+    return allItems.filter(item => (item.include && item.name.length == 1)).length > 0 && ! this.naturalComplete(allItems) ;
+  }
+
   someComplete(allItems: Pair[]): boolean {
     if (allItems == null) {
       return false;
     }
     return allItems.filter(item => item.include).length > 0 && ! this.allComplete(allItems) ;
   }
- 
 
   setAll(include: boolean, allItems: Pair[]) {
     if (allItems == null) {
@@ -182,6 +194,12 @@ export class AppComponent implements OnInit{
     }
     allItems.forEach(t => (t.include = include));
   }  
+
+  setAllNaturals(include: boolean, allItems: Pair[]){
+    if(allItems == null){
+      return;
+    }
+
+  allItems.forEach(t => {if(t.name.length == 1) {t.include = include;}});
+  }
 }
-
-

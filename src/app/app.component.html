@@ -44,6 +44,14 @@
           (change)="setAll($event.checked, allKeys)">
           All Keys
       </mat-checkbox>
+      <mat-checkbox 
+          class="example-margin"
+          [checked]="naturalComplete(allKeys)"
+          color="primary"
+          [indeterminate]="someNaturalComplete(allKeys)"
+          (change)="setAllNaturals($event.checked, allKeys)">
+          All Natural Keys
+      </mat-checkbox>
       <span class="example-list-section">
         <ul>
           <div *ngFor="let key of allKeys">
