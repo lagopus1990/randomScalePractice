@@ -1985,25 +1985,167 @@ export class ScalesService {
                new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
                new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }),
                new this.VF.StaveNote({ keys: ["a/4"], duration: "q" })],
-               
-
+            ],[   
 // A# ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                // A# Major / Ionian
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Dorian
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Phrygian 
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Lydian 
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Myxolydian
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Aeolian / Natural Minor
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Locrian
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Harmonic Minor
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Lydian flat 7 
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Whole tone half tone
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Spanish / Phrygian dominant
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Pentatonic Major
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Blues Major
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["f/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Pentatonic Minor
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Blues Minor
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["d/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
                // A# Altered 16
+               [new this.VF.StaveNote({ keys: ["a/3"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["b/3"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["c/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("n")),
+               new this.VF.StaveNote({ keys: ["e/4"], duration: "q" }).addModifier(new this.VF.Accidental("##")),
+               new this.VF.StaveNote({ keys: ["g/4"], duration: "q" }).addModifier(new this.VF.Accidental("#")),
+               new this.VF.StaveNote({ keys: ["a/4"], duration: "q" }).addModifier(new this.VF.Accidental("#"))],
+               
+
+
+// Bb ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+               // Bb Major / Ionian
+               // Bb Dorian
+               // Bb Phrygian 
+               // Bb Lydian 
+               // Bb Myxolydian
+               // Bb Aeolian / Natural Minor
+               // Bb Locrian
+               // Bb Harmonic Minor
+               // Bb Lydian flat 7 
+               // Bb Whole tone half tone
+               // Bb Spanish / Phrygian dominant
+               // Bb Pentatonic Major
+               // Bb Blues Major
+               // Bb Pentatonic Minor
+               // Bb Blues Minor
+               // Bb Altered 16
             ]
          ]}
 
