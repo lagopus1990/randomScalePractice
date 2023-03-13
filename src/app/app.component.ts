@@ -33,9 +33,9 @@ export class AppComponent implements OnInit{
     {name: 'G flat / Gb', include: false},
     {name: 'G', include: false},
     {name: 'G sharp / G#', include: false},
-    {name: 'A flat / Ab', include: true},
+    {name: 'A flat / Ab', include: false},
     {name: 'A', include: false},
-    {name: 'A sharp / A#', include: false},
+    {name: 'A sharp / A#', include: true},
     {name: 'B flat / Bb', include: false},
     {name: 'B', include: false},]; // 17
 
