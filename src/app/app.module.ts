@@ -15,10 +15,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ScalesService } from './scales.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,7 @@ import { ScalesService } from './scales.service';
     MatFormFieldModule,
     MatCheckboxModule,
     MatCardModule,
+    MatDialogModule,
     MatOptionModule,
     MatSelectModule,
     MatButtonModule,
@@ -37,6 +42,7 @@ import { ScalesService } from './scales.service';
     CdkAccordionModule
     ],
   providers: [ScalesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[DialogComponent],
 })
 export class AppModule { }

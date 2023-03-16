@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import vexflow from 'vexflow';
 import Vex from "vexflow";
 import { ScalesService } from './scales.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 export interface Pair {
@@ -79,7 +81,7 @@ export class AppComponent implements OnInit{
   staveSize = 520;
   showStaff = true;
 
-  constructor(private scalesService: ScalesService){
+  constructor(private scalesService: ScalesService, public dialog: MatDialog){
     this.selectedScaleTypes = this.allScaleTypes;
     this.selectedKeys = this.allKeys;
   }
@@ -129,6 +131,10 @@ export class AppComponent implements OnInit{
       this.scaleType = this.generateRandomItem(this.selectedScaleTypes, this.scaleType);
       this.redrawStaff();
       }, this.interval*1000);
+  }
+
+  openDialog() {
+    this.dialog.open(DialogComponent);
   }
   
   toggleStaff(){
