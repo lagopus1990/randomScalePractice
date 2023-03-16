@@ -50,12 +50,12 @@ export class AppComponent implements OnInit{
     {name:'Harmonic minor', include: false},
     {name:'Lydian flat7', include: false},
     {name:'Half tone whole tone', include: false}, 
+    {name: 'Altered (dominant) /  Super Locrian ', include: false},
     {name:'Spanish / Phrygian Dominant', include: false},
     {name:'Pentatonic Major', include: false},  
     {name:'Major Blues', include: false},  
     {name:'Pentatonic Minor', include: false},  
     {name:'Minor Blues', include: false},  
-    {name: 'Altered (dominant) /  Super Locrian ', include: false}
   ];
 
   allNotes: any;
