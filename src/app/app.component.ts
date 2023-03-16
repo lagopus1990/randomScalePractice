@@ -36,8 +36,8 @@ export class AppComponent implements OnInit{
     {name: 'A flat / Ab', include: false},
     {name: 'A', include: false},
     {name: 'A sharp / A#', include: false},
-    {name: 'B flat / Bb', include: true},
-    {name: 'B', include: false},]; // 17
+    {name: 'B flat / Bb', include: false},
+    {name: 'B', include: true},]; // 17
 
   allScaleTypes: Pair[] = [
     {name:'Ionian / Major', include: true},
